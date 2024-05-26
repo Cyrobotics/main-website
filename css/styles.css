@@ -9,43 +9,82 @@ body {
 header {
     background: #0288d1;
     color: white;
-    padding: 10px 20px;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.5s;
+}
+
+header:hover {
+    background: #0277bd;
+}
+
+header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
 }
 
 header nav a {
     color: white;
-    margin: 0 10px;
+    margin: 0 15px;
     text-decoration: none;
+    font-size: 1.2em;
+    position: relative;
+}
+
+header nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: white;
+    transition: width 0.3s ease, right 0.3s ease;
+}
+
+header nav a:hover::after {
+    width: 100%;
+    right: 0;
 }
 
 /* Landing Page Styles */
 .banner {
     background: url('images/servo-banner.jpg') no-repeat center center/cover;
-    height: 300px;
+    height: 400px;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     text-align: center;
+    animation: fadeIn 1s ease-in;
 }
 
 .banner h1 {
-    font-size: 3em;
+    font-size: 3.5em;
     margin: 0;
+    color: #000;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
 }
 
 .banner button {
     background: #0288d1;
     border: none;
-    padding: 10px 20px;
+    padding: 15px 30px;
     color: white;
-    font-size: 1em;
+    font-size: 1.2em;
     cursor: pointer;
     margin-top: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.banner button:hover {
+    background: #0277bd;
 }
 
 /* Catalog Page Styles */
@@ -53,6 +92,7 @@ header nav a {
     display: flex;
     justify-content: center;
     margin: 20px;
+    flex-wrap: wrap;
 }
 
 .product-card {
@@ -61,14 +101,15 @@ header nav a {
     border-radius: 10px;
     overflow: hidden;
     margin: 10px;
-    width: 200px;
+    width: 250px;
     text-align: center;
     transition: transform 0.3s;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .product-card img {
     width: 100%;
-    height: 150px;
+    height: 200px;
     object-fit: cover;
 }
 
@@ -77,12 +118,13 @@ header nav a {
 }
 
 .product-card h2 {
-    font-size: 1.2em;
+    font-size: 1.5em;
     margin: 10px 0;
+    color: #000;
 }
 
 .product-card p {
-    font-size: 1em;
+    font-size: 1.2em;
     color: #0288d1;
     margin: 10px 0;
 }
@@ -92,20 +134,28 @@ header nav a {
     border: none;
     padding: 10px 20px;
     color: white;
-    font-size: 1em;
+    font-size: 1.2em;
     cursor: pointer;
     margin-bottom: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.product-card button:hover {
+    background: #0277bd;
 }
 
 /* About Us Page Styles */
 .about {
     padding: 20px;
     text-align: center;
+    animation: fadeIn 1s ease-in;
 }
 
 .about h2 {
-    font-size: 2em;
+    font-size: 2.5em;
     margin-bottom: 10px;
+    color: #000;
 }
 
 .about p {
@@ -119,8 +169,9 @@ header nav a {
 }
 
 .checkout h2 {
-    font-size: 2em;
+    font-size: 2.5em;
     margin-bottom: 10px;
+    color: #000;
 }
 
 .checkout form {
@@ -130,6 +181,7 @@ header nav a {
 
 .checkout label {
     margin: 10px 0 5px;
+    font-size: 1.2em;
 }
 
 .checkout input, .checkout select {
@@ -137,15 +189,22 @@ header nav a {
     margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 1em;
 }
 
 .checkout button {
     background: #0288d1;
     border: none;
-    padding: 10px 20px;
+    padding: 15px 30px;
     color: white;
-    font-size: 1em;
+    font-size: 1.2em;
     cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.checkout button:hover {
+    background: #0277bd;
 }
 
 /* Modal Styles */
@@ -159,6 +218,7 @@ header nav a {
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: fadeIn 0.5s ease-in;
 }
 
 .modal-content {
@@ -167,6 +227,7 @@ header nav a {
     border-radius: 10px;
     text-align: center;
     position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .modal-content img {
@@ -177,6 +238,7 @@ header nav a {
 
 .modal-content h2 {
     margin: 10px 0;
+    color: #000;
 }
 
 .modal-content p {
@@ -193,4 +255,14 @@ header nav a {
     border: none;
     font-size: 1.5em;
     cursor: pointer;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
