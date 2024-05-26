@@ -24,6 +24,7 @@ header:hover {
 header .logo {
     font-size: 1.5em;
     font-weight: bold;
+    cursor: pointer;
 }
 
 header nav a {
